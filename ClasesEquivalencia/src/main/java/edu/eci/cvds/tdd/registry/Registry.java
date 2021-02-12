@@ -5,12 +5,12 @@ public class Registry {
 	private static ArrayList ids= new ArrayList();
 	public static RegisterResult registerVoter(Person p) {
 
-	        if (p.getAge() >=18 || p.getAge()<=120){
+	        if (p.getAge() >=18 && p.getAge()<=120){
 			if (p.isAlive()) {
 				if (ids.contains(p.getId())){
 					return RegisterResult.DUPLICATED;
 				}else{
-					ids.add(p.getAge());
+					ids.add(p.getId());
 					return RegisterResult.VALID;
 				}
 			}else{
